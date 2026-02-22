@@ -1,0 +1,445 @@
+/**
+ * Graph visualization styles
+ * Styles for D3.js force-directed graph
+ */
+
+/* SVG Canvas */
+#graph-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Links */
+.link {
+    stroke: #999;
+    stroke-width: 2px;
+    opacity: 0.6;
+}
+
+/* Nodes */
+.node {
+    cursor: default;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.node-incident {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.node circle {
+    transition: r 0.2s ease, filter 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.node:hover circle {
+    filter: brightness(1.1);
+}
+
+.node-deal circle {
+    fill: #2196F3;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.node-incident circle {
+    fill: #F44336;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+/* Node Labels */
+.node-label {
+    fill: #333;
+    font-size: 11px;
+    font-weight: 500;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Deal node labels - even smaller to prevent overlap */
+.node-deal .node-label,
+.node-deal-group .node-label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+html[dir="rtl"] .node-label {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+/* Victim Container Styles */
+.victim-container {
+    pointer-events: none; /* Allow clicks to pass through to nodes */
+}
+
+.victim-container-bg {
+    transition: opacity 0.3s ease;
+}
+
+.massacre-container-label {
+    pointer-events: none;
+    user-select: none;
+}
+
+.victim-container-connector {
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* RTL support for label */
+html[dir="rtl"] .massacre-container-label {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+/* Mobile - hide container on very small screens */
+@media (max-width: 767px) {
+    .victim-container {
+        display: none;
+    }
+}
+
+/* Popup Modal */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.popup-content {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.popup-content .btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+html[dir="rtl"] .popup-content .btn-close {
+    right: auto;
+    left: 15px;
+}
+
+.popup-content .btn-close:hover {
+    background: #f0f0f0;
+}
+
+.popup-body {
+    padding-top: 10px;
+}
+
+.popup-body h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #1976D2;
+    border-bottom: 2px solid #1976D2;
+    padding-bottom: 10px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h4 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.detail-section p {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.detail-section strong {
+    color: #333;
+}
+
+#popup-sources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#popup-sources-list li {
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+
+#popup-sources-list a {
+    color: #1976D2;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+#popup-sources-list a:hover {
+    color: #1565C0;
+    text-decoration: underline;
+}
+
+#popup-sources-list a::before {
+    content: '→';
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+html[dir="rtl"] #popup-sources-list a::before {
+    content: '←';
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Deal Popup Sources Styling (same as incident popup) */
+#deal-popup-sources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#deal-popup-sources-list li {
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+
+#deal-popup-sources-list a {
+    color: #1976D2;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+#deal-popup-sources-list a:hover {
+    color: #1565C0;
+    text-decoration: underline;
+}
+
+#deal-popup-sources-list a::before {
+    content: '→';
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+html[dir="rtl"] #deal-popup-sources-list a::before {
+    content: '←';
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+/* Scrollbar Styling */
+.popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Expand Victims Button */
+.btn-expand-victims {
+    display: block;
+    width: 100%;
+    margin: 20px auto 0;
+    background: #F44336;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-expand-victims:hover {
+    background: #D32F2F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-expand-victims:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 767px) {
+    .btn-expand-victims {
+        display: none !important;
+    }
+}
+
+/* Context Menu */
+.context-menu {
+    position: fixed;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    min-width: 150px;
+    padding: 4px 0;
+}
+
+.context-menu-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 14px;
+    color: #333;
+}
+
+.context-menu-item:hover {
+    background: #f0f0f0;
+}
+
+/* Reset Filter Button */
+#reset-filters-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px 24px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: none;
+}
+
+#reset-filters-btn:hover {
+    background: #1976D2;
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.6);
+    transform: translateY(-2px);
+}
+
+#reset-filters-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.4);
+}
+
+/* About Modal */
+.about-popup-content {
+    max-width: 800px;
+    width: 90%;
+}
+
+.about-image-container {
+    margin: 20px 0 30px;
+    text-align: center;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.about-content {
+    line-height: 1.8;
+    color: #333;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.about-content a {
+    color: #1976D2;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.about-content a:hover {
+    border-bottom-color: #1976D2;
+}
+
+.about-content strong {
+    color: #1976D2;
+    font-weight: 600;
+}

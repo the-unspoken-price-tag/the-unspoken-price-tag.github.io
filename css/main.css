@@ -1,0 +1,588 @@
+/**
+ * Main styles for Hostage Deal Consequences Tracker
+ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* RTL Support */
+html[dir="rtl"] body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Heebo', 'Assistant';
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.site-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 150px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+html[dir="rtl"] .site-logo {
+    left: auto;
+    right: 20px;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.site-subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.btn-language-header {
+    position: absolute;
+    top: 20px;
+    right: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 90px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-language-header:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+html[dir="rtl"] .btn-language-header {
+    right: auto;
+    left: 120px;
+}
+
+.btn-about {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 90px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-about:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+html[dir="rtl"] .btn-about {
+    right: auto;
+    left: 20px;
+}
+
+/* Ratio Banner */
+.ratio-banner {
+    background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    padding: 40px 20px;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: center;
+}
+
+.ratio-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.ratio-values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    direction: ltr;
+}
+
+.ratio-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.ratio-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ratio-number.ratio-released {
+    color: #2196F3;
+}
+
+.ratio-number.ratio-casualties {
+    color: #F44336;
+}
+
+.ratio-separator {
+    color: #666;
+    font-size: 3rem;
+    font-weight: 700;
+    align-self: center;
+    margin-bottom: 35px;
+}
+
+.ratio-label {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #2196F3;
+    text-align: center;
+}
+
+.ratio-label-casualties {
+    color: #F44336;
+}
+
+.ratio-quote {
+    max-width: 800px;
+    margin: 25px auto;
+    padding: 20px 30px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+    border-left: 4px solid #2196F3;
+    background: linear-gradient(to right, rgba(33, 150, 243, 0.05), transparent);
+}
+
+.ratio-quote p {
+    margin: 0;
+}
+
+.ratio-quote-number {
+    font-weight: 700;
+    color: #F44336;
+    font-style: normal;
+}
+
+.ratio-quote-israeli {
+    color: #2196F3;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ratio-quote-died {
+    color: #F44336;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ratio-viz {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 15px;
+}
+
+#ratio-viz-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ratio-viz-circle circle {
+    cursor: default;
+    transition: filter 0.3s ease;
+}
+
+.ratio-viz-circle:hover circle {
+    filter: brightness(1.1);
+}
+
+.ratio-tooltip-text {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Statistics Section */
+.statistics-section {
+    background: white;
+    padding: 40px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.statistics-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background: #f9f9f9;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1976D2;
+    margin-bottom: 8px;
+}
+
+/* Override colors for specific stats */
+#stat-deals,
+#stat-prisoners {
+    color: #333 !important;
+}
+
+#stat-casualties,
+#stat-verified-casualties,
+#stat-claimed-casualties {
+    color: #F44336 !important;
+}
+
+.stat-ratio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    direction: ltr; /* Always display ratio left-to-right (1:7.07) even in Hebrew */
+}
+
+.stat-ratio-released {
+    color: #2196F3; /* Blue for Israelis released */
+}
+
+.stat-ratio-separator {
+    color: #666;
+}
+
+.stat-ratio-casualties {
+    color: #F44336; /* Red for casualties */
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.info-icon {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #999;
+    cursor: help;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.info-icon:hover {
+    color: #1976D2;
+}
+
+.stat-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    max-width: 280px;
+    z-index: 10000;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    text-transform: none;
+    letter-spacing: normal;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: left;
+    direction: ltr;
+}
+
+html[dir="rtl"] .stat-tooltip {
+    text-align: right;
+    direction: rtl;
+}
+
+.stat-tooltip.visible {
+    opacity: 1;
+}
+
+/* Graph Section */
+.graph-section {
+    background: white;
+    padding: 40px 20px;
+    min-height: 600px;
+}
+
+.graph-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#graph-container {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#loading-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.empty-state {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 1.1rem;
+    color: #999;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Methodology Section */
+.methodology-section {
+    background: white;
+    padding: 40px 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.methodology-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn-toggle {
+    display: block;
+    margin: 0 auto 20px;
+    background: #1976D2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-toggle:hover {
+    background: #1565C0;
+}
+
+.toggle-icon {
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+html[dir="rtl"] .toggle-icon {
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.methodology-content {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.methodology-content.collapsed {
+    max-height: 0;
+}
+
+.methodology-content h3 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1976D2;
+}
+
+.methodology-content h3:first-child {
+    margin-top: 0;
+}
+
+.methodology-content p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.methodology-content ul {
+    margin: 15px 0 15px 30px;
+    color: #555;
+}
+
+html[dir="rtl"] .methodology-content ul {
+    margin: 15px 30px 15px 0;
+}
+
+.methodology-content li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.site-footer {
+    background: #333;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.footer-separator {
+    margin: 0 10px;
+    opacity: 0.5;
+}
+
+/* Buttons */
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+
+.btn-close:hover {
+    color: #333;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* Casualty Numbers */
+.casualty-number {
+    color: #F44336;
+    font-weight: 600;
+}
+
+.stat-casualty {
+    color: #F44336 !important;
+}
+
+/* ============================================
+   FOUC Prevention: Hide content until i18n ready
+   ============================================ */
+
+/* Hide text content during i18n initialization */
+body.i18n-loading [data-i18n] {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Show content with smooth fade-in after i18n ready */
+body.i18n-ready [data-i18n] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.15s ease-in;
+}

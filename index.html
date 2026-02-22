@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FOUC Prevention: Inline Language Detection -->
+    <script>
+        (function() {
+            // This is the Hebrew landing page - always default to Hebrew
+            const detectedLang = 'he';
+
+            // Set HTML attributes immediately to prevent directional flash
+            document.documentElement.lang = detectedLang;
+            document.documentElement.dir = detectedLang === 'he' ? 'rtl' : 'ltr';
+
+            // Store for i18n.js to use
+            window.__initialLang = detectedLang;
+        })();
+    </script>
+
+    <!-- FOUC Prevention: Inline Hebrew Translations (eliminates network delay) -->
+    <script id="inline-translations-he">
+        window.__inlineTranslations = {
+            he: {
+                "site_title": "המחיר הלא מדובר של עסקאות השבויים הישראליות",
+                "site_subtitle": "מעקב אחר מחבלים משוחררים שביצעו רצח לאחר ששוחררו בעסקאות שבויים ישראליות",
+                "statistics_title": "סטטיסטיקה גלובלית",
+                "statistics_title_tooltip": "סטטיסטיקות מצטברות אלה נאספו ממקורות מאומתים ציבוריים (כגון אתרי חדשות). לצפייה במקור של כל סטטיסטיקה, לחץ על הצמתים בגרף העסקאות למטה.",
+                "stat_deals": "עסקאות במעקב",
+                "stat_incidents": "סך אירועים",
+                "stat_prisoners": "אסירים ששוחררו",
+                "stat_casualties": "ישראלים שנרצחו",
+                "stat_verified_casualties": "נרצחים מאומתים",
+                "stat_verified_casualties_tooltip": "מקרים מאומתים ומתועדים בהם מחבלים משוחררים ביצעו רצח לאחר שחרורם, כולל התקפות ישירות וקורבנות טבח ה7 באוקטובר 2023 שתוכנן על ידי מחבלים משוחררים",
+                "stat_direct_casualties": "נרצחים ישירים",
+                "stat_indirect_casualties": "נרצחי טבח ה7 באוקטובר",
+                "stat_claimed_casualties": "נרצחים לא מאומתים",
+                "stat_released": "ישראלים ששוחררו",
+                "stat_ratio": "יחס נרצחים",
+                "stat_ratio_tooltip": "עבור כל ישראלי ששוחרר, מספר הישראלים שנרצחו כתוצאה מכך. כולל נרצחים מאומתים ולא מאומתים.",
+                "ratio_title": "מחיר עסקאות השבויים הישראליות",
+                "ratio_israelis": "ישראלי משוחרר",
+                "ratio_casualties": "ישראלים שנרצחו",
+                "ratio_casualties_text": "ישראלים שנרצחו",
+                "ratio_tooltip_text": "יחס זה כולל ישראלים שנרצחו על ידי מחבלים משוחררים: נרצחים מאומתים ונרצחים לא מאומתים",
+                "ratio_viz_israelis": "ישראלים ששוחררו",
+                "ratio_viz_casualties": "ישראלים שנרצחו",
+                "ratio_quote_prefix": "על פי הנתונים, עבור כל",
+                "ratio_quote_israeli": "ישראלי ששוחרר",
+                "ratio_quote_comma": ",",
+                "ratio_quote_died": "ישראלים נרצחו",
+                "ratio_quote_suffix": "כתוצאה מכך בעתיד.",
+                "ratio_no_data": "אין נתונים זמינים",
+                "meta_description": "מעקב אחר השלכות עסקאות השבויים הישראליות באמצעות נתונים מאומתים. תיעוד מחבלים משוחררים שביצעו רצח לאחר חילופי שבויים.",
+                "stat_deals_tooltip": "מספר כולל של עסקאות חילופי שבויים במעקב במאגר הנתונים שלנו",
+                "stat_prisoners_tooltip": "מספר כולל של אסירים ששוחררו על ידי ישראל בעסקאות חילופין",
+                "stat_released_tooltip": "מספר כולל של חטופים, חיילים ואזרחים ישראלים ששוחררו בעסקאות חילופין",
+                "stat_direct_casualties_tooltip": "מקרים מאומתים בהם מחבלים משוחררים ביצעו רצח באופן ישיר לאחר שחרורם",
+                "stat_indirect_casualties_tooltip": "קורבנות של טבח ה7 באוקטובר שתוכנן או בוצע על ידי מחבלים ששוחררו בעסקאות חילופין",
+                "stat_claimed_casualties_tooltip": "קורבנות שנטען שנרצחו אך טרם אומתו באופן מלא באמצעות מקורות עיתונאיים מוסמכים",
+                "graph_title": "גרף העסקאות",
+                "graph_title_tooltip": "גרף אינטראקטיבי זה מציג את עסקאות השבויים והשלכותיהן. כל צומת כחול מייצג עסקה, ומציג את מספר הישראלים ששוחררו בחיים. צמתים אדומים המחוברים לצמתים כחולים מייצגים אירועים בהם קורבנות נרצחו על ידי אסירים ששוחררו באותה עסקה. לחץ על כל צומת לצפייה בפרטיו ובמקורות המאומתים. לחץ לחיצה ימנית על כל צומת כדי להסירו ולראות סטטיסטיקות מעודכנות ללא אותה עסקה או אירוע.",
+                "mobile_desktop_notice": "לחוויית צפייה מיטבית, מומלץ להשתמש בדפדפן מחשב",
+                "loading": "טוען נתונים...",
+                "no_data": "אין אירועים להצגה כרגע. נתונים יתווספו בעת השלמת האימות.",
+                "methodology_title": "מתודולוגיה",
+                "show_more": "הצג עוד",
+                "show_less": "הצג פחות",
+                "methodology_content": "<h3>תהליך איסוף הנתונים</h3><p>כל נתוני האירועים נאספים אוטומטית מהתיעוד המקיף של ויקיפדיה העברית על עסקת שליט. הערות השוליים של ויקיפדיה משמשות כמקורות ראשוניים לאימות.</p><h3>מתודולוגיית אימות מקורות</h3><p>כל אירוע חייב לעמוד בקריטריונים הבאים:</p><ul><li><strong>מינימום מקור אחד:</strong> כל אירוע מאומת על ידי לפחות מקור אמין אחד מהערות השוליים של ויקיפדיה</li><li><strong>חילוץ אוטומטי:</strong> המקורות מחולצים אוטומטית מהפניות ויקיפדיה</li><li><strong>נגישות:</strong> כל כתובות האתרים של המקורות נבדקות לנגישות ותקינות</li><li><strong>ללא רשתות חברתיות:</strong> פוסטים ברשתות חברתיות ופורומים לא נכללים במקורות</li></ul><h3>מפרסמים מאושרים</h3><p><strong>תקשורת ישראלית:</strong> ynet, הארץ, טיימס אוף איזראל, ג'רוזלם פוסט, i24NEWS, ישראל היום, מעריב</p><p><strong>תקשורת אמריקאית:</strong> ניו יורק טיימס, וושינגטון פוסט, CNN, רויטרס, AP News, NBC News, וול סטריט ג'ורנל</p><p><strong>ממשלה ואתרי מידע:</strong> אתרי ממשלת ישראל, ויקיפדיה</p><h3>מקורות חסומים</h3><p>המקורות הבאים אסורים בהחלט:</p><ul><li>פלטפורמות רשתות חברתיות: פייסבוק, טוויטר/X, אינסטגרם, טיקטוק, טלגרם</li><li>פורומים: Reddit</li><li>בלוגים אישיים ואתרים לא מאומתים</li></ul><h3>תקני איכות הנתונים</h3><p>כל האירועים מחולצים ומאומתים אוטומטית:</p><ul><li>מקורות מהערות שוליים של ויקיפדיה</li><li>תיעוד ברור ממפרסמים אמינים</li><li>אימות אוטומטי של נגישות המקורות</li><li>מידע דו-לשוני (אנגלית ועברית)</li></ul><h3>עדכונים ותיקונים</h3><p>מערך נתונים זה נבדק ומתעדכן באופן קבוע. אם אתם מבחינים בטעויות או שיש לכם מידע מאומת נוסף, אנא צרו קשר עם מקורות אמינים.</p>",
+                "incident_details": "פרטי האירוע",
+                "victim_info": "מידע על הקורבן",
+                "militant_info": "מחבל משוחרר",
+                "name": "שם",
+                "age": "גיל",
+                "age_at_release": "גיל בעת השחרור",
+                "date": "תאריך",
+                "location": "מיקום",
+                "affiliation": "השתייכות",
+                "released_in": "שוחרר ב",
+                "sources": "מקורות",
+                "disclaimer": "מעקב זה מציג נתונים מאומתים ממקורות אמינים.",
+                "last_updated": "עדכון אחרון:",
+                "deal_details": "פרטי העסקה",
+                "deal_info": "מידע על העסקה",
+                "deal_date": "תאריך",
+                "prisoners_released": "אסירים ששוחררו (בחיים)",
+                "israelis_released": "ישראלים ששוחררו (בחיים)",
+                "recidivism_statistics": "סטטיסטיקות חזרה לטרור",
+                "recidivism_rate": "שיעור חזרה לטרור",
+                "prisoners_returned": "אסירים שחזרו לטרור",
+                "claimed_casualties": "קורבנות ישראלים (לא מאומת)",
+                "verified_casualties": "קורבנות מאומתים (מתועדים)",
+                "verified_direct_casualties": "נפגעים ישירים מאומתים (מתועדים)",
+                "verified_indirect_casualties": "נרצחי טבח 7 באוקטובר (מאומתים)",
+                "october_7_massacre": "טבח 7 באוקטובר",
+                "source_organization": "ארגון המקור",
+                "citation": "ציטוט",
+                "additional_notes": "הערות נוספות",
+                "remove_node": "הסר צומת",
+                "reset_filters": "איפוס סינון",
+                "about_button": "אודות",
+                "about_title": "אודות הפרויקט",
+                "about_image_caption": "ראיון של רוני קובן עם יורם כהן, ראש השב״כ לשעבר",
+                "about_content": "<p>סוגיית שחרור מחבלים מעוררת מחלוקת עמוקה ומתמשכת בציבוריות הישראלית, במיוחד כאשר היא עולה בהקשר של עסקאות חילופי שבויים או ניסיונות להשבת חטופים וחיילים נעדרים.</p><p>מטבע הדברים, עיקר השיח בנושא ה״מחיר״ אותו מדינת ישראל משלמת, נסוב סביב ה״דם על הידיים״ של המחבלים המשוחררים, כלומר כמה ישראלים הם רצחו בעברם (למשל <a href=\"https://realpriceproject.org/\" target=\"_blank\" rel=\"noopener noreferrer\">פרויקט המחיר</a>).</p><p>הסוגיה הפחות מדוברת היא המחיר <span style=\"color: red;\"><em>העתידי</em></span> אותו מדינת ישראל נדרשת לשלם, כלומר כמות הישראלים שנרצחים כתוצאה מעסקאות של שחרור מחבלים. לכל מי שעסק בתפקיד בטחוני העוסק בטרור ומכיר את ההיסטוריה של עסקאות דומות, ברור כשמש כי <span style=\"color: red;\"><em>כמעט בוודאות</em></span> עתידים להירצח ישראלים כתוצאה מכל עסקה עתידית בה ישוחררו כמות גדולה של מחבלים.</p><p>הרעיון להקמת מערכת להנגשת מידע על המחיר העתידי של עסקאות מחבלים עלה לי לאחר שצפיתי <a href=\"https://youtu.be/80UiN8kj6z0?t=2387\" target=\"_blank\" rel=\"noopener noreferrer\">בראיון (המעולה) של רוני קובן</a> עם ראש השב״כ לשעבר יורם כהן. במסגרת הראיון, נשאל ראש השב״כ לשעבר אם הוא מרגיש אשמה על שחרור של יחיא סינואר (שתכנן והוציא לפועל את מתקפת הטרור הגדולה בהיסטוריה של מדינת ישראל) במסגרת עסקת שליט. ראש השב״כ לשעבר השיב שאינו מרגיש כל חרטה כיוון שגם היום הוא בעד עסקה, אף ש״ברור לו שהעסקאות יגרמו לרצח של ישראלים״. התגובה של רוני קובן הייתה שוק טוטלי (״ואוו״ במילותיו). הסצינה הפשוטה הזאת גרמה לי להבין שהידע הכל כך בסיסי הזה, ששחרור מחבלים גורם בוודאות לרצח עתידי, לא מספיק מוכר בציבוריות הישראלית.</p><p>במסגרת מערכת זו ניסיתי להנגיש, על סמך ידיעות עיתונאיות מוסמכות בלבד, את כל המקרים המתועדים של מחבלים שרצחו ישראלים לאחר ששוחררו בעסקאות שבויים. לצערי, משרד הבטחון לא מפרסם את הנתונים האלו, לכן רוב המוחלט של המידע על נרצחים זמין לנו בעיקר מעשור האחרון, קרי עסקת גלעד שליט.</p><p>מערכת זאת עלתה לאוויר רק לאחר שחרור כל השבויים בעסקה האחרונה. כעת, כשאין אף שבוי ישראלי אצל האויב, זה הזמן לדון בסוגיות אלו.</p><p>אם הבחנתם באי-דיוקים או במידע חסר, אנא אל תהססו ליצור איתנו קשר בכתובת: <a href=\"mailto:the.unspoken.price.tag@gmail.com\">the.unspoken.price.tag@gmail.com</a></p>",
+                "expand_victims_graph": "הצג גרף קורבנות מלא"
+            }
+        };
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG2GRCP3Q2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZG2GRCP3Q2');
+    </script>
+
+    <!-- Cache Control - Prevent HTML caching -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>המחיר הלא מדובר של עסקאות השבויים הישראליות</title>
+    <meta name="description" content="מעקב אחר השלכות עסקאות השבויים הישראליות באמצעות נתונים מאומתים. תיעוד מחבלים משוחררים שביצעו רצח לאחר חילופי שבויים.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Israeli hostage deals, prisoner exchange, terrorism, recidivism, data visualization">
+    <meta name="author" content="Exchange Price Tag Project">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn) -->
+    <meta property="og:title" content="המחיר הלא מדובר של עסקאות השבויים הישראליות">
+    <meta property="og:description" content="מעקב אחר השלכות עסקאות השבויים הישראליות באמצעות נתונים מאומתים. תיעוד מחבלים משוחררים שביצעו רצח לאחר חילופי שבויים.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:image:alt" content="Exchange Price Tag Project Logo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="Exchange Price Tag">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="המחיר הלא מדובר של עסקאות השבויים הישראליות">
+    <meta name="twitter:description" content="מעקב אחר השלכות עסקאות השבויים הישראליות באמצעות נתונים מאומתים. תיעוד מחבלים משוחררים שביצעו רצח לאחר חילופי שבויים.">
+    <meta name="twitter:image" content="images/logo.jpg">
+    <meta name="twitter:image:alt" content="Exchange Price Tag Project Logo">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
+
+    <!-- CSS (with cache busting) -->
+    <link rel="stylesheet" href="css/main.css?v=2026-02-23-v5">
+    <link rel="stylesheet" href="css/graph.css?v=2026-02-24-v1">
+    <link rel="stylesheet" href="css/responsive.css?v=2026-02-24-v1">
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body class="i18n-loading">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <img src="images/logo.jpg" alt="Logo" class="site-logo">
+            <h1 class="site-title" data-i18n="site_title">The Unspoken Price of Israeli Hostage Deals</h1>
+            <p class="site-subtitle" data-i18n="site_subtitle">Tracking released militants who committed murders after being released by Israeli prisoner exchanges</p>
+            <button id="about-button" class="btn-about" data-i18n="about_button">About</button>
+            <button id="language-toggle" class="btn-language-header" aria-label="Toggle language">
+                <span id="language-label">עברית</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Ratio Banner -->
+    <section class="ratio-banner">
+        <div class="container">
+            <h2 class="ratio-title" data-i18n="ratio_title">The Price of Israeli Hostage Deals</h2>
+            <div class="ratio-values">
+                <div class="ratio-column">
+                    <div class="ratio-number ratio-released">1</div>
+                    <div class="ratio-label" data-i18n="ratio_israelis">Israeli Released</div>
+                </div>
+                <div class="ratio-separator">:</div>
+                <div class="ratio-column">
+                    <div class="ratio-number ratio-casualties" id="ratio-value">-</div>
+                    <div class="ratio-label ratio-label-casualties" data-i18n="ratio_casualties_text">Israelis Murdered</div>
+                </div>
+            </div>
+            <blockquote class="ratio-quote">
+                <p>
+                    <span data-i18n="ratio_quote_prefix">According to the data, for each</span>
+                    <span class="ratio-quote-israeli" data-i18n="ratio_quote_israeli">Israeli released</span><span data-i18n="ratio_quote_comma">,</span>
+                    <span id="ratio-quote-value" class="ratio-quote-number">7.07</span>
+                    <span class="ratio-quote-died" data-i18n="ratio_quote_died">Israelis died</span>
+                    <span data-i18n="ratio_quote_suffix">as a result in the future.</span>
+                </p>
+            </blockquote>
+            <div id="ratio-viz" class="ratio-viz">
+                <svg id="ratio-viz-svg"></svg>
+            </div>
+            <p class="ratio-tooltip-text" data-i18n="ratio_tooltip_text">This ratio includes Direct Casualties, October 7 Massacre Casualties, and Unverified Casualties</p>
+        </div>
+    </section>
+
+    <!-- Statistics Dashboard -->
+    <section class="statistics-section">
+        <div class="container">
+            <h2>
+                <span data-i18n="statistics_title">Statistics</span>
+                <span class="info-icon" data-tooltip="statistics_title_tooltip">ⓘ</span>
+            </h2>
+            <div class="statistics-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-deals">-</div>
+                    <div class="stat-label">
+                        <span data-i18n="stat_deals">Deals Tracked</span>
+                        <span class="info-icon" data-tooltip="stat_deals_tooltip">ⓘ</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-prisoners">-</div>
+                    <div class="stat-label">
+                        <span data-i18n="stat_prisoners">Prisoners Released</span>
+                        <span class="info-icon" data-tooltip="stat_prisoners_tooltip">ⓘ</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-released">-</div>
+                    <div class="stat-label">
+                        <span data-i18n="stat_released">Israelis Released</span>
+                        <span class="info-icon" data-tooltip="stat_released_tooltip">ⓘ</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-casualty" id="stat-verified-casualties">-</div>
+                    <div class="stat-label">
+                        <span data-i18n="stat_verified_casualties">Verified Casualties</span>
+                        <span class="info-icon" data-tooltip="stat_verified_casualties_tooltip">ⓘ</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-claimed-casualties">-</div>
+                    <div class="stat-label">
+                        <span data-i18n="stat_claimed_casualties">Unverified Casualties</span>
+                        <span class="info-icon" data-tooltip="stat_claimed_casualties_tooltip">ⓘ</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value stat-ratio" id="stat-ratio">-</div>
+                    <div class="stat-label">
+                        <span data-i18n="stat_ratio">Casualty Ratio</span>
+                        <span class="info-icon" data-tooltip="stat_ratio_tooltip">ⓘ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Graph Visualization -->
+    <section class="graph-section">
+        <div class="container">
+            <h2>
+                <span data-i18n="graph_title">Visual Network</span>
+                <span class="info-icon" data-tooltip="graph_title_tooltip">ⓘ</span>
+            </h2>
+            <div class="mobile-notice" data-i18n="mobile_desktop_notice">For better viewing experience, we recommend using a desktop browser</div>
+            <div id="graph-container">
+                <div id="loading-message" data-i18n="loading">Loading data...</div>
+                <svg id="graph-svg"></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Incident Popup Modal -->
+    <div id="incident-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <button id="popup-close" class="btn-close" aria-label="Close">&times;</button>
+            <div class="popup-body">
+                <h3 data-i18n="incident_details">Incident Details</h3>
+
+                <div class="detail-section">
+                    <h4 data-i18n="victim_info">Victim Information</h4>
+                    <p><strong data-i18n="name">Name:</strong> <span id="popup-victim-name"></span></p>
+                    <p id="popup-victim-age-container"><strong data-i18n="age">Age:</strong> <span id="popup-victim-age"></span></p>
+                    <p><strong data-i18n="date">Date:</strong> <span id="popup-victim-date"></span></p>
+                    <p><strong data-i18n="location">Location:</strong> <span id="popup-victim-location"></span></p>
+                    <p id="popup-victim-description"></p>
+                </div>
+
+                <div class="detail-section">
+                    <h4 data-i18n="militant_info">Released Militant</h4>
+                    <p><strong data-i18n="name">Name:</strong> <span id="popup-militant-name"></span></p>
+                    <p id="popup-militant-age-container"><strong data-i18n="age_at_release">Age at Release:</strong> <span id="popup-militant-age"></span></p>
+                    <p id="popup-militant-affiliation-container"><strong data-i18n="affiliation">Affiliation:</strong> <span id="popup-militant-affiliation"></span></p>
+                    <p><strong data-i18n="released_in">Released in:</strong> <span id="popup-deal-name"></span></p>
+                </div>
+
+                <div class="detail-section">
+                    <h4 data-i18n="sources">Sources</h4>
+                    <ul id="popup-sources-list"></ul>
+                </div>
+
+                <div class="detail-section">
+                    <button id="popup-expand-victims-btn" class="btn-expand-victims" style="display: none;">
+                        <span data-i18n="expand_victims_graph">See full victims graph</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Deal Popup Modal -->
+    <div id="deal-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <button id="deal-popup-close" class="btn-close" aria-label="Close">&times;</button>
+            <div class="popup-body">
+                <h3 data-i18n="deal_details">Deal Details</h3>
+
+                <div class="detail-section">
+                    <h4 data-i18n="deal_info">Deal Information</h4>
+                    <p><strong data-i18n="name">Name:</strong> <span id="deal-popup-name"></span></p>
+                    <p><strong data-i18n="deal_date">Date:</strong> <span id="deal-popup-date"></span></p>
+                    <p><strong data-i18n="prisoners_released">Prisoners Released:</strong> <span id="deal-popup-prisoners"></span></p>
+                    <p><strong data-i18n="israelis_released">Israelis Released:</strong> <span id="deal-popup-israelis"></span></p>
+                    <p id="deal-popup-description"></p>
+                </div>
+
+                <div id="deal-popup-sources-container" class="detail-section" style="display: none;">
+                    <h4 data-i18n="sources">Sources</h4>
+                    <ul id="deal-popup-sources-list"></ul>
+                </div>
+
+                <div class="detail-section" id="deal-popup-recidivism-section">
+                    <h4 data-i18n="recidivism_statistics">Recidivism Statistics</h4>
+                    <p id="deal-popup-recidivism-rate-container"><strong data-i18n="recidivism_rate">Recidivism Rate:</strong> <span id="deal-popup-recidivism-rate"></span></p>
+                    <p id="deal-popup-prisoners-returned-container"><strong data-i18n="prisoners_returned">Prisoners Returned to Terrorism:</strong> <span id="deal-popup-prisoners-returned"></span></p>
+                    <p id="deal-popup-claimed-casualties-container"><strong data-i18n="claimed_casualties">Unverified Israeli Casualties:</strong> <span id="deal-popup-claimed-casualties"></span></p>
+                    <p id="deal-popup-verified-casualties-container"><strong data-i18n="verified_casualties">Verified Casualties:</strong> <span id="deal-popup-verified-casualties" class="casualty-number"></span></p>
+                    <p id="deal-popup-source-org-container"><strong data-i18n="source_organization">Source Organization:</strong> <span id="deal-popup-source-org"></span></p>
+                    <p id="deal-popup-citation-container"><strong data-i18n="citation">Citation:</strong> <span id="deal-popup-citation"></span></p>
+                    <div id="deal-popup-notes-container">
+                        <h4 data-i18n="additional_notes">Additional Notes</h4>
+                        <p id="deal-popup-notes"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Popup Modal -->
+    <div id="about-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content about-popup-content">
+            <button id="about-popup-close" class="btn-close" aria-label="Close">&times;</button>
+            <div class="popup-body">
+                <h3 data-i18n="about_title">About This Project</h3>
+
+                <div class="about-image-container">
+                    <img src="images/logo_wide.jpg" alt="Roni Kuban Interview" class="about-image" />
+                </div>
+
+                <div class="about-content" data-i18n="about_content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+        </div>
+    </footer>
+
+    <!-- Reset Filter Button -->
+    <button id="reset-filters-btn" data-i18n="reset_filters">Reset Filters</button>
+
+    <!-- JavaScript -->
+    <!-- Cache busting: Update version when JS files change -->
+    <script>const CACHE_VERSION = '2026-02-23-v5';</script>
+    <script src="js/i18n.js?v=2026-02-23-v5"></script>
+    <script src="js/data-loader.js?v=2026-02-23-v5"></script>
+    <script src="js/statistics.js?v=2026-02-23-v5"></script>
+    <script src="js/ratio-visualization.js?v=2026-02-23-v5"></script>
+    <script src="js/about-popup.js?v=2026-02-23-v5"></script>
+    <script src="js/popup.js?v=2026-02-24-v1"></script>
+    <script src="js/tooltip.js?v=2026-02-23-v5"></script>
+    <script src="js/graph.js?v=2026-02-25-v1"></script>
+    <script src="js/main.js?v=2026-02-23-v5"></script>
+</body>
+</html>

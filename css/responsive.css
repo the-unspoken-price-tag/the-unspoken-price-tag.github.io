@@ -1,0 +1,400 @@
+/**
+ * Responsive styles for mobile and tablet devices
+ */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .site-title {
+        font-size: 2rem;
+    }
+
+    .site-subtitle {
+        font-size: 1rem;
+    }
+
+    .ratio-title {
+        font-size: 1.8rem;
+    }
+
+    .ratio-number {
+        font-size: 2.8rem;
+    }
+
+    .ratio-separator {
+        font-size: 2.5rem;
+    }
+
+    .ratio-label {
+        font-size: 0.9rem;
+    }
+
+    .statistics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .methodology-content {
+        padding: 0 15px;
+    }
+}
+
+/* Mobile Notice - Hidden by default, shown only on mobile */
+.mobile-notice {
+    display: none;
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+    /* Mobile Notice */
+    .mobile-notice {
+        display: block;
+        background-color: #fff3cd;
+        border: 1px solid #ffc107;
+        border-radius: 4px;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        color: #856404;
+        text-align: center;
+    }
+
+    /* Tooltip - centered on mobile */
+    .stat-tooltip {
+        max-width: calc(100vw - 40px);
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+        font-size: 0.95rem;
+        padding: 16px 20px;
+    }
+
+    /* Header */
+    .site-header {
+        padding: 30px 15px;
+    }
+
+    .site-title {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+    }
+
+    .site-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .btn-language-header {
+        position: static;
+        display: block;
+        margin: 20px auto 0;
+        width: 90px;
+    }
+
+    .btn-about {
+        position: static;
+        display: block;
+        margin: 10px auto 0;
+        width: 90px;
+    }
+
+    .site-logo {
+        position: static;
+        display: block;
+        margin: 0 auto 20px;
+        height: 120px;
+    }
+
+    /* Ratio Banner */
+    .ratio-banner {
+        padding: 30px 15px;
+    }
+
+    .ratio-title {
+        font-size: 1.5rem;
+    }
+
+    .ratio-values {
+        gap: 20px;
+    }
+
+    .ratio-number {
+        font-size: 2.5rem;
+    }
+
+    .ratio-separator {
+        font-size: 2.2rem;
+    }
+
+    .ratio-label {
+        font-size: 0.85rem;
+    }
+
+    .ratio-quote {
+        font-size: 1.1rem;
+        padding: 15px 20px;
+        margin: 20px auto;
+    }
+
+    .ratio-viz {
+        height: 200px;
+    }
+
+    .ratio-tooltip-text {
+        font-size: 0.85rem;
+    }
+
+    /* Statistics */
+    .statistics-section {
+        padding: 30px 15px;
+    }
+
+    .statistics-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* Graph */
+    .graph-section {
+        padding: 30px 15px;
+    }
+
+    .graph-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    #graph-container {
+        min-height: 400px;
+    }
+
+    .node-label {
+        font-size: 12px;
+    }
+
+    /* Methodology */
+    .methodology-section {
+        padding: 30px 15px;
+    }
+
+    .methodology-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .methodology-content {
+        padding: 0;
+    }
+
+    .methodology-content h3 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+
+    .methodology-content p,
+    .methodology-content li {
+        font-size: 0.95rem;
+    }
+
+    /* Popup */
+    .popup-content {
+        width: 95%;
+        max-width: none;
+        padding: 20px;
+        max-height: 90vh;
+    }
+
+    .about-popup-content {
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        text-align: start;
+    }
+
+    .popup-body h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .detail-section h4 {
+        font-size: 1.1rem;
+    }
+
+    .detail-section p {
+        font-size: 0.95rem;
+    }
+
+    #popup-sources-list a {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    #deal-popup-sources-list a {
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: 20px 15px;
+    }
+
+    .site-footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+    .site-logo {
+        height: 100px;
+    }
+
+    .site-title {
+        font-size: 1.4rem;
+    }
+
+    .site-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .ratio-title {
+        font-size: 1.3rem;
+    }
+
+    .ratio-values {
+        gap: 15px;
+    }
+
+    .ratio-number {
+        font-size: 2.2rem;
+    }
+
+    .ratio-separator {
+        font-size: 2rem;
+    }
+
+    .ratio-label {
+        font-size: 0.75rem;
+    }
+
+    .ratio-quote {
+        font-size: 1rem;
+        padding: 12px 15px;
+        margin: 15px auto;
+    }
+
+    .ratio-viz {
+        height: 180px;
+    }
+
+    .statistics-section h2,
+    .graph-section h2,
+    .methodology-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .stat-value {
+        font-size: 1.8rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    #graph-container {
+        min-height: 350px;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .popup-body h3 {
+        font-size: 1.2rem;
+    }
+
+    .detail-section h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+    /* Ensure minimum 44px touch target size */
+    .btn-language-header,
+    .btn-toggle,
+    .btn-close {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .node-incident circle {
+        cursor: pointer;
+    }
+
+    /* Touch-friendly targets - radius controlled by JavaScript for proper scaling */
+    .node-deal circle,
+    .node-incident circle {
+        /* Radius set via JavaScript to scale with node count */
+        cursor: pointer;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    #graph-container {
+        min-height: 500px;
+    }
+
+    .popup-content {
+        max-height: 85vh;
+    }
+}
+
+/* Print styles */
+@media print {
+    .btn-language-header,
+    .btn-toggle,
+    .btn-close,
+    #graph-svg {
+        display: none;
+    }
+
+    .methodology-content {
+        max-height: none !important;
+    }
+
+    .methodology-content.collapsed {
+        max-height: none !important;
+    }
+
+    .site-header,
+    .site-footer {
+        background: #333 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
